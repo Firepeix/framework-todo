@@ -33,11 +33,14 @@ class _AlbumListState extends State<AlbumList> {
   Widget build(BuildContext context) {
     if (_albums != null) {
       return GridView.count(
-          crossAxisCount: 2,
-          childAspectRatio: (6 / 4),
+          crossAxisCount: 1,
+          childAspectRatio: (6 / 2),
           children: _albums.map((album) {
             return Container(
+              padding: EdgeInsets.all(5),
                 child: Card(
+                  shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
+                  elevation: 2,
                     child: AlbumView(
                         id: album.getId(),
                         userId: album.getUserId(),

@@ -12,41 +12,45 @@ class PostView extends StatelessWidget{
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: Center(
-        child: Container(
-          child: Column(
-            children: <Widget>[
-              Container(
-                padding: const EdgeInsets.all(10),
+    return Center(
+      child: Container(
+        decoration: BoxDecoration(
+          borderRadius: BorderRadius.all(Radius.circular(10)),
+        ),
+        child: Column(
+          children: <Widget>[
+            Container(
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.only(topLeft: Radius.circular(10), topRight: Radius.circular(10)),
                 color: Theme.of(context).primaryColor,
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                  children: <Widget>[
-                    Flexible(
-                      child: Container(
-                        height: 30,
-                        alignment: Alignment.centerLeft,
-                        child: Text('$id - $title', maxLines: 1, style: TextStyle(color: Colors.white ,fontWeight: FontWeight.bold, fontSize: 18),  overflow: TextOverflow.ellipsis,),
-                      ),
-                    ),
-                    Container(
-                      child: Text('User: $userId', style: TextStyle(fontSize: 18,color: Colors.white),),
-                    )
-                  ],
-                ),
-
               ),
+              padding: const EdgeInsets.all(10),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                children: <Widget>[
+                  Flexible(
+                    child: Container(
+                      height: 30,
+                      alignment: Alignment.centerLeft,
+                      child: Text('$id - $title', maxLines: 1, style: TextStyle(color: Colors.white ,fontWeight: FontWeight.bold, fontSize: 18),  overflow: TextOverflow.ellipsis,),
+                    ),
+                  ),
+                  Container(
+                    child: Text('User: $userId', style: TextStyle(fontSize: 18,color: Colors.white),),
+                  )
+                ],
+              ),
+
+            ),
             Container(
               padding: const EdgeInsets.all(10),
               color: Colors.white,
-                  alignment: Alignment.centerLeft,
-                  child: Text(body,style: TextStyle(fontSize: 18)),
-                ),
-            ],
-          ),
+              alignment: Alignment.centerLeft,
+              child: Text(body,style: TextStyle(fontSize: 18)),
+            ),
+          ],
         ),
-      )
+      ),
     );
   }
 }

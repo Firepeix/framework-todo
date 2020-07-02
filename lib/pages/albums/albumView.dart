@@ -11,43 +11,44 @@ class AlbumView extends StatelessWidget{
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: Center(
-        child: Container(
-          padding: const EdgeInsets.all(5),
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: <Widget>[
-              Flexible(
-                child: Container(
-                  alignment: Alignment.center,
-                  height: 100,
-                  child: Text(title, maxLines: 3, style: TextStyle(fontWeight: FontWeight.bold, fontSize: 18), textAlign: TextAlign.center, overflow: TextOverflow.ellipsis,),
-                ),
+    return Center(
+      child: Container(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: <Widget>[
+            Container(
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.only(topLeft: Radius.circular(10), topRight: Radius.circular(10)),
+                color: Theme.of(context).primaryColor,
               ),
-              Divider(color: Colors.grey, thickness: 0.2),
-              Container(
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceAround,
-                  children: <Widget>[
-                    Container(
-                      child: Text('#$id', style: TextStyle(fontSize: 18),),
-                    ),
-                    Container(
-                      padding: EdgeInsets.zero,
+              padding: const EdgeInsets.all(10),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                children: <Widget>[
+                  Flexible(
+                    child: Container(
                       height: 30,
-                      child: VerticalDivider(width: 0.2, color: Colors.black, thickness: 0.2),
+                      alignment: Alignment.centerLeft,
+                      child: Text('#$id', maxLines: 1, style: TextStyle(color: Colors.white ,fontWeight: FontWeight.bold, fontSize: 18),  overflow: TextOverflow.ellipsis,),
                     ),
-                    Container(
-                      child: Text('User: $userId', style: TextStyle(fontSize: 20),),
-                    )
-                  ],
-                ),
-              )
-            ],
-          ),
+                  ),
+                  Container(
+                    child: Text('User: $userId', style: TextStyle(fontSize: 18,color: Colors.white),),
+                  )
+                ],
+              ),
+
+            ),
+            Flexible(
+              child: Container(
+                alignment: Alignment.center,
+                height: 100,
+                child: Text(title, maxLines: 3, style: TextStyle(fontWeight: FontWeight.bold, fontSize: 18), textAlign: TextAlign.center, overflow: TextOverflow.ellipsis,),
+              ),
+            ),
+          ],
         ),
-      )
+      ),
     );
   }
 }

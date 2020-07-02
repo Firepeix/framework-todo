@@ -39,7 +39,8 @@ class _PostListState extends State<PostList> {
             return Container(
                 padding: const EdgeInsets.all(5),
                 child: Card(
-                  elevation: 3,
+                    shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
+                    elevation: 3,
                     child: PostView(
                         id: post.getId(),
                         userId: post.getUserId(),
