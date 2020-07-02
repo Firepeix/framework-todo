@@ -17,6 +17,14 @@ class Album extends Model<Album> {
     return album;
   }
 
+  int getUserId() {
+    return userId;
+  }
+
+  String getTitle() {
+    return title;
+  }
+
 
   @override
   Album update(Album model) {
@@ -27,7 +35,7 @@ class Album extends Model<Album> {
 
   Map<String, dynamic> toMap() => {
     "id": id,
-    "user_id": userId,
+    "userId": userId,
     "title": title
   };
 

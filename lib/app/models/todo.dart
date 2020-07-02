@@ -18,6 +18,10 @@ class Todo extends Model<Todo> {
     return post;
   }
 
+  int getUserId() => userId;
+  String getTitle() => title;
+  bool isCompleted() => completed;
+
 
   @override
   Todo update(Todo model) {
@@ -29,7 +33,7 @@ class Todo extends Model<Todo> {
 
   Map<String, dynamic> toMap() => {
     "id": id,
-    "user_id": userId,
+    "userId": userId,
     "title": title,
     "completed": completed ? 1 : 0
   };

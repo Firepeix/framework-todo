@@ -15,7 +15,7 @@ class TodoService extends AbstractService {
   }
 
   @override
-  void sync() async {
+  Future<void> sync() async {
     var todos = await getTodos();
     var existentTodos = await _todoRepository.getWhereIn('id', todos.map((todo) => todo.getId()).toList());
     todos.forEach((todo) {

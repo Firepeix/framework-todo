@@ -1,12 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:teste_framework/pages/albums/albumList.dart';
 import 'package:teste_framework/pages/appPage.dart';
+import 'package:teste_framework/pages/posts/postList.dart';
 
 
-class AlbumsPage extends AppPage {
-  final String title = 'Albuns';
-  final IconData icon = Icons.album;
-
+class PostPage extends AppPage {
+  final String title = 'Posts';
+  final IconData icon = Icons.message;
 
   @override
   String getTitle() => title;
@@ -17,7 +16,7 @@ class AlbumsPage extends AppPage {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        body: AlbumList()
+        body: PostList()
     );
   }
 }

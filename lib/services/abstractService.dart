@@ -6,7 +6,9 @@ abstract class AbstractService {
   String uri;
 
   bool shouldSync ();
-  void sync ();
+  Future<void> sync () async {
+
+  }
 
   Future<List> fetch() async {
     var response = await http.get(uri);

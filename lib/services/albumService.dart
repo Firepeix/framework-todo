@@ -15,7 +15,7 @@ class AlbumService extends AbstractService {
   }
 
   @override
-  void sync() async {
+  Future<void> sync() async {
     var albums = await getAlbums();
     var existentAlbums = await _albumRepository.getWhereIn('id', albums.map((album) => album.getId()).toList());
     albums.forEach((album) {

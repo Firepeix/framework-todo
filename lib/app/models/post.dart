@@ -18,6 +18,10 @@ class Post extends Model<Post> {
     return post;
   }
 
+  int getUserId() => userId;
+  String getTitle() => title;
+  String getBody() => body;
+
 
   @override
   Post update(Post model) {
@@ -29,7 +33,7 @@ class Post extends Model<Post> {
 
   Map<String, dynamic> toMap() => {
     "id": id,
-    "user_id": userId,
+    "userId": userId,
     "title": title,
     "body": body
   };

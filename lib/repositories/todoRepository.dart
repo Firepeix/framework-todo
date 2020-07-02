@@ -25,7 +25,7 @@ class TodoRepository extends AbstractRepository<Todo> {
   static List<String> getV1Migrations () {
     return ["CREATE TABLE todos ("
         "id INTEGER PRIMARY KEY,"
-        "user_id INTEGER NOT NULL,"
+        "userId INTEGER NOT NULL,"
         "title VARCHAR(200),"
         "completed INTEGER"
         ")"];

@@ -25,7 +25,7 @@ class AlbumRepository extends AbstractRepository<Album> {
   static List<String> getV1Migrations () {
     return ["CREATE TABLE albums ("
         "id INTEGER PRIMARY KEY,"
-        "user_id INTEGER NOT NULL,"
+        "userId INTEGER NOT NULL,"
         "title VARCHAR(200)"
         ")"];
   }

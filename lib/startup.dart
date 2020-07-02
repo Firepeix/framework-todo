@@ -11,15 +11,18 @@ class Startup {
     _services.addAll([AlbumService(), PostService(), TodoService()]);
   }
 
-  void synchronize () {
+  Future<void> synchronize () async {
+    List<Future<void>> syncs = new List();
     _services.forEach((service) => {
       if(service.shouldSync()) {
-        service.sync()
+        syncs.add(service.sync())
       }
     });
+
+    return Future.wait(syncs);
   }
 
-  void start () async {
-    synchronize();
+  Future<void> start () async {
+    return await synchronize();
   }
 }

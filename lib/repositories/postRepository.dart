@@ -25,7 +25,7 @@ class PostRepository extends AbstractRepository<Post> {
   static List<String> getV1Migrations () {
     return ["CREATE TABLE posts ("
         "id INTEGER PRIMARY KEY,"
-        "user_id INTEGER NOT NULL,"
+        "userId INTEGER NOT NULL,"
         "title VARCHAR(200),"
         "body TEXT"
         ")"];

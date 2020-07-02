@@ -15,7 +15,7 @@ class PostService extends AbstractService {
   }
 
   @override
-  void sync() async {
+  Future<void> sync() async {
     var posts = await getPosts();
     var existentPosts = await _postRepository.getWhereIn('id', posts.map((post) => post.getId()).toList());
     posts.forEach((post) {
